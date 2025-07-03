@@ -1,0 +1,447 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Login Page</title>
+    <style>
+        .main-container{
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .main-heading{
+            color:darkslategray;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 28px;
+        }
+        .head-container{
+            background-color:cornsilk;
+            border-radius: 10px;
+            padding: 10px;
+            width: 50%;
+        }
+        .login-container{
+            background-color:cornsilk;
+            border-radius: 10px;
+            padding: 20px;
+            width: 50%;
+            
+        }
+        .login-head{
+            color:darkslategray;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            background-color:#ffffff;
+            border-radius: 5px;
+            border-width: 1px;
+            padding: 10px;
+            width: 100%;
+            color: black;
+        }
+        .sign-head{
+            color:darkslategray;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            background-color:cadetblue;
+            border-radius: 5px;
+            border-width: 1px;
+            padding: 10px;
+            width: 100%;
+            color: white;
+        }
+        .switch-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .login{
+            padding: 10px;
+            margin-left: 5px;
+        }
+        .username{
+            color:darkslategray;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        .input{
+            border-width: 0px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .butt{
+            color:darkslategray;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 18px;
+            background-color:cadetblue;
+            border-radius: 5px;
+            border-width: 0px;
+            padding: 9px;
+            color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width:576px){
+            .head-container{
+            background-color:cornsilk;
+            border-radius: 10px;
+            padding: 10px;
+            width: 85%;
+        }
+        .login-container{
+            background-color:cornsilk;
+            border-radius: 10px;
+            padding: 20px;
+            width: 85%;
+        }
+        .form-control{
+            border-width: 0px;
+            padding: 5px;
+        }
+        .al-container{
+            width:100%;
+            border-radius: 5px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-width: 1px;
+        }
+        .sugg{
+            color:cornflowerblue;
+        }
+        .pass-det{
+            width:90%;
+            border-radius: 10px;
+            background-color:azure;
+            padding: 5px;
+            border-width: 1px;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div class = 'main-container'>
+        <br/>
+        <br/>
+        <div class = 'head-container shadow'>
+            <h1 class = 'main-heading'>Welcome to Our Page😊😊</h1>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div class = 'login-container shadow'>
+            <div class = 'switch-container'>
+                <div class = 'login'>
+                    <button class = 'login-head' id = 'loginhead'>Login</button>
+                </div>
+                <div class = 'login'>
+                    <button class = 'sign-head' id = 'signuphead'>Sign up</button>
+                </div>
+            </div>
+            <div class = 'login-main-container p-3'>
+                <div class = 'user-cont' id = 'login'>
+                    <form>
+                        <label for = 'username' class = 'username'>UserName</label>
+                        <br/>
+                        <input type = 'text' id = 'use' class = 'input' placeholder="Enter your Email /User Name"/>
+                        <br/>
+                        <br/>
+                        <label for = 'pass' class = 'username'>Password</label>
+                        <br/>
+                        <input type = 'password' id = 'pa' class = 'input' placeholder="Enter your Password"/>
+                        <br/>
+                        <br/>
+                        <button class = 'butt' id = 'lg'  data-toggle="modal" data-target="#res">Login Now</button>
+                        <div class="modal fate d-none" id="res" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">You have Succesfully signed</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class = 'modal-body' id = 'modal'>
+                                    <p id = 'modal-id'></p>
+                                    <p id = 'modal-pass'></p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="butt" data-dismiss="modal" id = 'Done'>Done</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </form>
+                </div>
+                <div class = 'sign-cont d-none' id = 'signup'>
+                    <form>
+                        <label for = 'username' class = 'username'>UserName</label>
+                        <br/>
+                        <input type = 'text' id = 'username' class = 'input' placeholder="Enter your User Name"/>
+                        <p id = erruser></p>
+                        
+                        <label for = 'username' class = 'username'>Email ID</label>
+                        <br/>
+                        <input type = 'text' id = 'email' class = 'input' placeholder="eg: 123@gmail.com"/>
+                        <p id = 'errem'></p>
+                        
+                        <label for = 'pass' class = 'username'>Password</label>
+                        <br/>
+                        <input type = 'password' id = 'pass' class = 'input' placeholder="Enter your Password"/>
+                        <p id = 'passerr'></p>
+                        <div class = 'pass-det'>
+                        <ul>
+                            <li>should have atleast one special character</li>
+                            <li>password must be greater than 10 characters</li>
+                            <li> must have characters from A-Z & a-z</li>
+                        </ul>
+                        </div>
+                        <label for ='con-pass' class = 'username'>Confirm Password</label>
+                        <br/>
+                        <input type = 'password' id = 'pass1' class = 'input' placeholder="Confirm your Password"/>
+                        <p id = 'passerr1'></p>
+                        <label for = 'gender' class = 'username'>Gender</label>
+                        <br/>
+                        <input type = 'radio' id = 'male'/>
+                        <label for = 'male'>Male</label>
+                        <input type = 'radio' id = 'female'/>
+                        <label for = 'female'>Female</label>
+                        <br/>
+                        <br/>
+                        <label for="status" class = 'username'>Native Language</label>
+                        <select id="status" class="form-control">
+                            <option value="Telugu">Telugu</option>
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Tamil">Tamil</option>
+                            <option value="Kannada">Kannada</option>
+                        </select>
+                        <br/>
+
+                        <input type = 'checkbox' id ='check'/>
+                        <label for = 'check'>Accept Our Privacy Policy</label>
+                        <p id = 'checkerr'></p>
+
+                        <div class="modal fade" id="errex" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  ...
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <button class = 'butt' id = 'su' data-toggle="modal" data-target="#exampleModal">Sign Up Now</button>
+                        <div class="modal fate d-none" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">You have Succesfully signed</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="butt" data-dismiss="modal" id = 'close'>Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <br/>
+                        <br/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let loginhead = document.getElementById('loginhead');
+        let signuphead = document.getElementById('signuphead');
+        let a = document.getElementById('login');
+        let b = document.getElementById('signup');
+        let username = document.getElementById('username');
+        let pass = document.getElementById('pass');
+        let pass1 = document.getElementById('pass1');
+        let su = document.getElementById('su');
+        let erruser = document.getElementById('erruser');
+        let lang = document.getElementById('status');
+        let email = document.getElementById('email')
+
+        let aa = document.getElementById('res');
+        let bb = document.getElementById('use')
+        let cc = document.getElementById('pa');
+        let dd = document.getElementById('lg')
+
+        dd.addEventListener('click',(event)=>{
+            event.preventDefault();
+            aa.classList.remove('d-none');
+            document.getElementById('modal-id').textContent= `Email ID: ${bb.value}`;
+            document.getElementById('modal-pass').textContent=`Password length: ${(cc.value.length)}`; 
+            document.getElementById('done').addEventListener('click',()=>{
+                bb.value ="";
+                cc.value = '';
+                
+            })
+            
+        })
+        loginhead.addEventListener('click',(event)=>{
+            b.classList.add('d-none');
+            a.classList.remove('d-none');
+            loginhead.style.backgroundColor='white';
+            signuphead.style.backgroundColor='cadetblue';
+            loginhead.style.color = 'black';
+            signuphead.style.color = 'white';
+
+        })
+        signuphead.addEventListener('click',(event)=>{
+            b.classList.remove('d-none');
+            a.classList.add('d-none')
+            signuphead.style.backgroundColor='white';
+            loginhead.style.backgroundColor='cadetblue';
+            signuphead.style.color='black';
+            loginhead.style.color = 'white'; 
+        })
+        username.addEventListener('blur',()=>{
+            if(username.value === ''){
+                erruser.textContent = '*Required';
+                erruser.style.color = 'red';
+            }
+            else{
+                erruser.textContent="";
+            }
+        })
+
+        pass.addEventListener('blur',()=>{
+            if(pass.value === ''){
+                document.getElementById('passerr').textContent = '*Required';
+                document.getElementById('passerr').style.color = 'red';
+            }
+            else{
+                document.getElementById('passerr').textContent = "";
+            }
+        })
+        pass1.addEventListener('blur',()=>{
+            if(pass1.value === ''){
+                document.getElementById('passerr1').textContent = '*Required';
+                document.getElementById('passerr1').style.color = 'red';
+            }
+            else{
+                document.getElementById('passerr1').textContent = "";
+            }
+            
+            if (pass1.value !== pass.value){
+            document.getElementById('passerr1').textContent = '*Password must be same';
+                document.getElementById('passerr1').style.color = 'red';
+        }
+        else{
+            document.getElementById('passerr1').textContent = "";
+        }
+        })
+
+        email.addEventListener('blur',()=>{
+            if(email.value === ''){
+                document.getElementById('errem').textContent = '*Required';
+                document.getElementById('errem').style.color = 'red'
+            }
+            else if(username.value === email.value){
+                document.getElementById('errem').textContent = 'username and email id must be different';
+                document.getElementById('errem').style.color = 'red';
+            }
+            else{
+                document.getElementById('errem').textContent = '';
+            }
+        })
+
+
+        let data = {
+            username : '',
+            emailid : '',
+            password : '',
+            gender : 'male',
+            language : 'Telugu',
+        }
+
+        su.addEventListener('click',(event)=>{
+            event.preventDefault();
+            if(username.value === '' || email.value === '' || pass.value === '' || pass1.value === ''){
+                return alert("Enter the required Details");
+            }
+            else if (username.value === email.value || username.value === pass.value){
+                return alert("every detial must be different from other"); 
+                document.getElementById('exampleModal').classList.add('d-none');  
+                
+
+            }
+            else if (document.getElementById('check').checked === false){
+                document.getElementById('checkerr').textContent = '*Required';
+                document.getElementById('checkerr').style.color = 'red';
+            }else if (typeof(pass.value) === 'number'){
+                    return alert("Give a Valid Password");
+            }
+            else{
+                data.username = username.value;
+                data.emailid = email.value;
+                data.password = pass.value;
+                data.gender = 'male';
+                data.language = lang.value; 
+            }
+            document.getElementById('exampleModal').classList.remove('d-none');
+            let opt = {
+                method:"POST",
+                headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+                Authorization:
+                    "Bearer 00f3f8fde06120db02b587cc372c3d85510896e899b45774068bb750462acd9f",
+                },
+                body:JSON.stringify(data)
+            };
+            fetch('https://gorest.co.in/public-api/users',opt)
+            .then(function(response){
+                return response.json;
+            })
+            .then(function(jsondata){
+                console.log(jsondata)
+                if(jsondata.code === 422){
+                    if (jsondata[0] === 'has already been taken'){
+                        doc.getElementById('exampleModalLabel').textContent = 'Email alreay existed';   
+                    }
+                }
+            })
+            document.getElementById('close').addEventListener('click',()=>{
+                username.value = '';
+                email.value = '';
+                pass.value = '';
+                pass1.value = '';
+            })
+            
+            
+        })
+    </script>
+</body>
+</html>
